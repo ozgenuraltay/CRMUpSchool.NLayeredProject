@@ -1,0 +1,15 @@
+C:\Users\ozgen\source\repos\CRMUpSchool.UILayer\CRMUpSchool.EntityLayer\bin\Debug\net5.0\CRMUpSchool.EntityLayer.deps.json
+C:\Users\ozgen\source\repos\CRMUpSchool.UILayer\CRMUpSchool.EntityLayer\bin\Debug\net5.0\CRMUpSchool.EntityLayer.runtimeconfig.json
+C:\Users\ozgen\source\repos\CRMUpSchool.UILayer\CRMUpSchool.EntityLayer\bin\Debug\net5.0\CRMUpSchool.EntityLayer.runtimeconfig.dev.json
+C:\Users\ozgen\source\repos\CRMUpSchool.UILayer\CRMUpSchool.EntityLayer\bin\Debug\net5.0\CRMUpSchool.EntityLayer.dll
+C:\Users\ozgen\source\repos\CRMUpSchool.UILayer\CRMUpSchool.EntityLayer\bin\Debug\net5.0\ref\CRMUpSchool.EntityLayer.dll
+C:\Users\ozgen\source\repos\CRMUpSchool.UILayer\CRMUpSchool.EntityLayer\bin\Debug\net5.0\CRMUpSchool.EntityLayer.pdb
+C:\Users\ozgen\source\repos\CRMUpSchool.UILayer\CRMUpSchool.EntityLayer\obj\Debug\net5.0\CRMUpSchool.EntityLayer.csproj.AssemblyReference.cache
+C:\Users\ozgen\source\repos\CRMUpSchool.UILayer\CRMUpSchool.EntityLayer\obj\Debug\net5.0\CRMUpSchool.EntityLayer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ozgen\source\repos\CRMUpSchool.UILayer\CRMUpSchool.EntityLayer\obj\Debug\net5.0\CRMUpSchool.EntityLayer.AssemblyInfoInputs.cache
+C:\Users\ozgen\source\repos\CRMUpSchool.UILayer\CRMUpSchool.EntityLayer\obj\Debug\net5.0\CRMUpSchool.EntityLayer.AssemblyInfo.cs
+C:\Users\ozgen\source\repos\CRMUpSchool.UILayer\CRMUpSchool.EntityLayer\obj\Debug\net5.0\CRMUpSchool.EntityLayer.csproj.CoreCompileInputs.cache
+C:\Users\ozgen\source\repos\CRMUpSchool.UILayer\CRMUpSchool.EntityLayer\obj\Debug\net5.0\CRMUpSchool.EntityLayer.dll
+C:\Users\ozgen\source\repos\CRMUpSchool.UILayer\CRMUpSchool.EntityLayer\obj\Debug\net5.0\ref\CRMUpSchool.EntityLayer.dll
+C:\Users\ozgen\source\repos\CRMUpSchool.UILayer\CRMUpSchool.EntityLayer\obj\Debug\net5.0\CRMUpSchool.EntityLayer.pdb
+C:\Users\ozgen\source\repos\CRMUpSchool.UILayer\CRMUpSchool.EntityLayer\obj\Debug\net5.0\CRMUpSchool.EntityLayer.genruntimeconfig.cache
