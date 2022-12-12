@@ -201,6 +201,35 @@ namespace CRMUpSchool.DataAccessLayer.Migrations
                     b.ToTable("Employees");
                 });
 
+            modelBuilder.Entity("CRMUpSchool.EntityLayer.Concrete.EmployeeTask", b =>
+                {
+                    b.Property<int>("EmployeeTaskID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<DateTime>("Date")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Details")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("EmployeeID")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Status")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Title")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("EmployeeTaskID");
+
+                    b.HasIndex("EmployeeID");
+
+                    b.ToTable("EmployeeTasks");
+                });
+
             modelBuilder.Entity("CRMUpSchool.EntityLayer.Concrete.Product", b =>
                 {
                     b.Property<int>("ProductID")
@@ -334,6 +363,17 @@ namespace CRMUpSchool.DataAccessLayer.Migrations
                     b.Navigation("Category");
                 });
 
+            modelBuilder.Entity("CRMUpSchool.EntityLayer.Concrete.EmployeeTask", b =>
+                {
+                    b.HasOne("CRMUpSchool.EntityLayer.Concrete.Employee", "Employee")
+                        .WithMany("EmployeeTasks")
+                        .HasForeignKey("EmployeeID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Employee");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<int>", b =>
                 {
                     b.HasOne("CRMUpSchool.EntityLayer.Concrete.AppRole", null)
@@ -388,6 +428,11 @@ namespace CRMUpSchool.DataAccessLayer.Migrations
             modelBuilder.Entity("CRMUpSchool.EntityLayer.Concrete.Category", b =>
                 {
                     b.Navigation("Employees");
+                });
+
+            modelBuilder.Entity("CRMUpSchool.EntityLayer.Concrete.Employee", b =>
+                {
+                    b.Navigation("EmployeeTasks");
                 });
 #pragma warning restore 612, 618
         }

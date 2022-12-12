@@ -1,4 +1,5 @@
 ﻿using CRMUpSchool.EntityLayer.Concrete;
+using CRMUpSchool.UILayer.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -31,6 +32,48 @@ namespace CRMUpSchool.UILayer.Controllers
             if (result.Succeeded)
             {
                 return RedirectToAction("Index", "UserList");
+            }
+            return View();
+        }
+
+        [HttpGet]
+        public IActionResult Index2()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Index2(UserSignUpModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                AppUser appUser = new AppUser()
+                {
+                    UserName = model.UserName,
+                    Name = model.Name,
+                    Surname = model.Surname,
+                    Email = model.Email,
+                    PhoneNumber = model.PhoneNumber
+                };
+                if (model.Password == model.ConfirmPassword)
+                {
+                    var result = await _userManager.CreateAsync(appUser, model.Password);
+                    if (result.Succeeded)
+                    {
+                        return RedirectToAction("Index", "Login");
+                    }
+                    else
+                    {
+                        foreach (var item in result.Errors)
+                        {
+                            ModelState.AddModelError("", item.Description);
+                        }
+                    }
+                }
+                else
+                {
+                    ModelState.AddModelError("", "Girdiğiniz şifreler uyuşmuyor.");
+                }
             }
             return View();
         }
