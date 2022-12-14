@@ -11,13 +11,23 @@ using System.Threading.Tasks;
 
 namespace CRMUpSchool.DataAccessLayer.EntityFramework
 {
-   public  class EFEmployeeTaskDAL:GenericRepository<EmployeeTask>,IEmployeeTaskDAL
+    public class EFEmployeeTaskDAL : GenericRepository<EmployeeTask>, IEmployeeTaskDAL
     {
         public List<EmployeeTask> GetEmployeeTaskByEmployee()
         {
-            using (var context = new Context()) {
-                var employeeTask=context.EmployeeTasks.Include(x => x.Employee).ToList();
+            using (var context = new Context())
+            {
+                var employeeTask = context.EmployeeTasks.Include(x => x.AppUser).ToList();
                 return employeeTask;
+            }
+        }
+
+        public List<EmployeeTask> GetEmployeeTaskByID(int id)
+        {
+            using (var context = new Context())
+            {
+                var employee = context.EmployeeTasks.Where(x => x.AppUserID == id).ToList();
+                return employee;
             }
         }
     }

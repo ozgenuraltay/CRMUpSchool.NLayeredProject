@@ -15,7 +15,7 @@ namespace CRMUpSchool.BusinessLayer.ValidationRules
             RuleFor(x => x.EmployeeName).NotEmpty().WithMessage("Personel adı boş olamaz.");
             RuleFor(x => x.EmployeeName).MinimumLength(2).WithMessage("Lütfen en az iki karakter giriniz.");
             RuleFor(x => x.EmployeeName).MaximumLength(20).WithMessage("Lütfen en çok 20 karakter giriniz.");
-            RuleFor(x => x.EmpployeeSurname).NotEmpty().WithMessage("Personel soyadı boş olamaz.");
+            RuleFor(x => x.EmployeeSurname).NotEmpty().WithMessage("Personel soyadı boş olamaz.");
         }
     }
 }

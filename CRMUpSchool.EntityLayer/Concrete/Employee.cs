@@ -14,7 +14,7 @@ namespace CRMUpSchool.EntityLayer.Concrete
 
         public string EmployeeName { get; set; }
 
-        public string EmpployeeSurname { get; set; }
+        public string EmployeeSurname { get; set; }
 
         public string EmployeeMail { get; set; }
 
@@ -26,6 +26,6 @@ namespace CRMUpSchool.EntityLayer.Concrete
 
         public bool EmployeeStatus { get; set; }
 
-        public List<EmployeeTask> EmployeeTasks { get; set; }
+     
     }
 }

@@ -36,6 +36,12 @@ namespace CRMUpSchool.UILayer
             services.AddScoped<IEmployeeService, EmployeeManager>();
             services.AddScoped<IEmployeeDAL, EFEmployeeDAL>();
 
+            services.AddScoped<IEmployeeTaskService, EmployeeTaskManager>();
+            services.AddScoped<IEmployeeTaskDAL, EFEmployeeTaskDAL>();
+
+            services.AddScoped<IEmployeeTaskDetailService, EmployeeTaskDetailManager>();
+            services.AddScoped<IEmployeeTaskDetailDAL, EFEmployeeTaskDetailDAL>();
+
             services.AddIdentity<AppUser, AppRole>().AddErrorDescriber<CustomIdentityValidator>().AddEntityFrameworkStores<Context>();
             services.AddDbContext<Context>();
 
@@ -72,6 +78,15 @@ namespace CRMUpSchool.UILayer
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
             });
+
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapControllerRoute(
+                  name: "areas",
+                  pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}"
+                );
+            });
         }
+
     }
 }

@@ -18,7 +18,7 @@ namespace CRMUpSchool.BusinessLayer.Concrete
             _employeeTaskDAL = employeeTaskDAL;
         }
 
-        public List<EmployeeTask> GetEmployeeTaskByEmployee()
+        public List<EmployeeTask> TGetEmployeeTaskByEmployee()
         {
             return _employeeTaskDAL.GetEmployeeTaskByEmployee();
         }
@@ -40,12 +40,17 @@ namespace CRMUpSchool.BusinessLayer.Concrete
 
         public void TInsert(EmployeeTask t)
         {
-            throw new NotImplementedException();
+            _employeeTaskDAL.Insert(t);
         }
 
         public void TUpdate(EmployeeTask t)
         {
             throw new NotImplementedException();
+        }
+
+        public List<EmployeeTask> TGetEmployeeTaskByID(int id)
+        {
+            return _employeeTaskDAL.GetEmployeeTaskByID(id);
         }
     }
 }

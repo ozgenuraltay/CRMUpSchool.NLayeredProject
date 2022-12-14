@@ -191,7 +191,7 @@ namespace CRMUpSchool.DataAccessLayer.Migrations
                     b.Property<bool>("EmployeeStatus")
                         .HasColumnType("bit");
 
-                    b.Property<string>("EmpployeeSurname")
+                    b.Property<string>("EmployeeSurname")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("EmployeeID");
@@ -208,14 +208,14 @@ namespace CRMUpSchool.DataAccessLayer.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<int>("AppUserID")
+                        .HasColumnType("int");
+
                     b.Property<DateTime>("Date")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Details")
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("EmployeeID")
-                        .HasColumnType("int");
 
                     b.Property<string>("Status")
                         .HasColumnType("nvarchar(max)");
@@ -225,9 +225,32 @@ namespace CRMUpSchool.DataAccessLayer.Migrations
 
                     b.HasKey("EmployeeTaskID");
 
-                    b.HasIndex("EmployeeID");
+                    b.HasIndex("AppUserID");
 
                     b.ToTable("EmployeeTasks");
+                });
+
+            modelBuilder.Entity("CRMUpSchool.EntityLayer.Concrete.EmployeeTaskDetail", b =>
+                {
+                    b.Property<int>("EmployeeTaskDetailID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<DateTime>("Date")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("EmployeeTaskID")
+                        .HasColumnType("int");
+
+                    b.HasKey("EmployeeTaskDetailID");
+
+                    b.HasIndex("EmployeeTaskID");
+
+                    b.ToTable("EmployeeTaskDetails");
                 });
 
             modelBuilder.Entity("CRMUpSchool.EntityLayer.Concrete.Product", b =>
@@ -365,13 +388,24 @@ namespace CRMUpSchool.DataAccessLayer.Migrations
 
             modelBuilder.Entity("CRMUpSchool.EntityLayer.Concrete.EmployeeTask", b =>
                 {
-                    b.HasOne("CRMUpSchool.EntityLayer.Concrete.Employee", "Employee")
+                    b.HasOne("CRMUpSchool.EntityLayer.Concrete.AppUser", "AppUser")
                         .WithMany("EmployeeTasks")
-                        .HasForeignKey("EmployeeID")
+                        .HasForeignKey("AppUserID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Employee");
+                    b.Navigation("AppUser");
+                });
+
+            modelBuilder.Entity("CRMUpSchool.EntityLayer.Concrete.EmployeeTaskDetail", b =>
+                {
+                    b.HasOne("CRMUpSchool.EntityLayer.Concrete.EmployeeTask", "EmployeeTask")
+                        .WithMany("EmployeeTaskDetails")
+                        .HasForeignKey("EmployeeTaskID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("EmployeeTask");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<int>", b =>
@@ -425,14 +459,19 @@ namespace CRMUpSchool.DataAccessLayer.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("CRMUpSchool.EntityLayer.Concrete.AppUser", b =>
+                {
+                    b.Navigation("EmployeeTasks");
+                });
+
             modelBuilder.Entity("CRMUpSchool.EntityLayer.Concrete.Category", b =>
                 {
                     b.Navigation("Employees");
                 });
 
-            modelBuilder.Entity("CRMUpSchool.EntityLayer.Concrete.Employee", b =>
+            modelBuilder.Entity("CRMUpSchool.EntityLayer.Concrete.EmployeeTask", b =>
                 {
-                    b.Navigation("EmployeeTasks");
+                    b.Navigation("EmployeeTaskDetails");
                 });
 #pragma warning restore 612, 618
         }

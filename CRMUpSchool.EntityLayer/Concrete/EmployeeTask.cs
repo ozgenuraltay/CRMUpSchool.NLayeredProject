@@ -18,8 +18,10 @@ namespace CRMUpSchool.EntityLayer.Concrete
 
         public DateTime Date { get; set; }
 
-        public int EmployeeID { get; set; }
+        public int AppUserID { get; set; }
 
-        public Employee Employee { get; set; }
+        public AppUser AppUser { get; set; }
+
+        public List<EmployeeTaskDetail> EmployeeTaskDetails { get; set; }
     }
 }
