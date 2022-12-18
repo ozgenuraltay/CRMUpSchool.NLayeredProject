@@ -42,6 +42,9 @@ namespace CRMUpSchool.UILayer
             services.AddScoped<IEmployeeTaskDetailService, EmployeeTaskDetailManager>();
             services.AddScoped<IEmployeeTaskDetailDAL, EFEmployeeTaskDetailDAL>();
 
+            services.AddScoped<IMessageService, MessageManager>();
+            services.AddScoped<IMessageDAL, EFMessageDAL>();
+
             services.AddIdentity<AppUser, AppRole>().AddErrorDescriber<CustomIdentityValidator>().AddEntityFrameworkStores<Context>();
             services.AddDbContext<Context>();
 
