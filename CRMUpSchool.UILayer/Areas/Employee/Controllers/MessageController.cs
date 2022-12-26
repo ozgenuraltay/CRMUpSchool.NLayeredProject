@@ -81,12 +81,10 @@ namespace CRMUpSchool.UILayer.Areas.Employee.Controllers
             SmtpClient client = new SmtpClient();
 
             client.Connect("smtp.gmail.com",587,false); //ikinci parametre türkiye için port numarası, üçüncü parametre ssl kullanıp kullanmaması
-            client.Authenticate("ozgenur123312@gmail.com", "srjfhuqetjaljxxq");
+         
             client.Send(mimeMessage);
             client.Disconnect(true);
             return View();
         }
     }
 }
-
-//srjfhuqetjaljxxq -->mail
