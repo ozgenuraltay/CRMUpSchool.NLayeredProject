@@ -5,7 +5,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="ClosedXML" Version="0.97.0" />
+    <PackageReference Include="EPPlus.Core" Version="1.5.4" />
     <PackageReference Include="FluentValidation.AspNetCore" Version="11.2.2" />
+    <PackageReference Include="iTextSharp.LGPLv2.Core" Version="2.0.1" />
     <PackageReference Include="MailKit" Version="3.4.3" />
     <PackageReference Include="Microsoft.AspNetCore.Identity" Version="2.2.0" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="5.0.17" />
@@ -32,6 +35,7 @@
 
   <ItemGroup>
     <Folder Include="Areas\Employee\Data\" />
+    <Folder Include="wwwroot\PDFReports\" />
     <Folder Include="wwwroot\UserImages\" />
   </ItemGroup>
 

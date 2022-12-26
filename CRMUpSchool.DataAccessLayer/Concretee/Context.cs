@@ -28,5 +28,7 @@ namespace CRMUpSchool.DataAccessLayer.Concretee
         public DbSet<EmployeeTaskDetail> EmployeeTaskDetails { get; set; }
 
         public DbSet<Message> Messages { get; set; }
+
+        public DbSet<Announcement> Announcements { get; set; }
     }
 }

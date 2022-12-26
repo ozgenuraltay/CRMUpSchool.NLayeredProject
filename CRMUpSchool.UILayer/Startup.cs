@@ -1,5 +1,6 @@
 using CRMUpSchool.BusinessLayer.Abstract;
 using CRMUpSchool.BusinessLayer.Concrete;
+using CRMUpSchool.BusinessLayer.DIContainer;
 using CRMUpSchool.DataAccessLayer.Abstract;
 using CRMUpSchool.DataAccessLayer.Concretee;
 using CRMUpSchool.DataAccessLayer.EntityFramework;
@@ -32,20 +33,7 @@ namespace CRMUpSchool.UILayer
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddScoped<ICategoryService, CategoryManager>();
-            services.AddScoped<ICategoryDAL, EFCategoryDAL>();
-
-            services.AddScoped<IEmployeeService, EmployeeManager>();
-            services.AddScoped<IEmployeeDAL, EFEmployeeDAL>();
-
-            services.AddScoped<IEmployeeTaskService, EmployeeTaskManager>();
-            services.AddScoped<IEmployeeTaskDAL, EFEmployeeTaskDAL>();
-
-            services.AddScoped<IEmployeeTaskDetailService, EmployeeTaskDetailManager>();
-            services.AddScoped<IEmployeeTaskDetailDAL, EFEmployeeTaskDetailDAL>();
-
-            services.AddScoped<IMessageService, MessageManager>();
-            services.AddScoped<IMessageDAL, EFMessageDAL>();
+            services.ContainerDependencies();
 
             services.AddIdentity<AppUser, AppRole>().AddErrorDescriber<CustomIdentityValidator>().AddEntityFrameworkStores<Context>();
             services.AddDbContext<Context>();
