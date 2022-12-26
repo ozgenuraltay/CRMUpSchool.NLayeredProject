@@ -1,0 +1,25 @@
+﻿@model CRMUpSchool.UILayer.Areas.Employee.Models.MailRequest
+@{
+    ViewData["Title"] = "SendEmail";
+    Layout = "~/Views/Shared/_EmployeeLayout.cshtml";
+}
+
+<h1>Mail Yolla</h1>
+
+<form method="post" class="form-control">
+    <label>Alıcı Mail:</label>
+    <br />
+    <input type="text" asp-for="ReceiverMail" class="form-control" />
+    <br />
+    <label>Mail Konusu:</label>
+    <br />
+    <input type="text" asp-for="MailSubject" class="form-control" />
+    <br />
+    <label>Mail İçeriği:</label>
+    <br />
+    <textarea rows="5" cols="3" asp-for="MailContent" class="form-control">
+</textarea>
+    <br />
+    <button class="btn btn-primary">Gönder</button>
+    <br />
+</form>

@@ -1,8 +1,11 @@
 ﻿using CRMUpSchool.BusinessLayer.Abstract;
 using CRMUpSchool.DataAccessLayer.Concretee;
 using CRMUpSchool.EntityLayer.Concrete;
+using CRMUpSchool.UILayer.Areas.Employee.Models;
+using MailKit.Net.Smtp;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using MimeKit;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -41,7 +44,47 @@ namespace CRMUpSchool.UILayer.Areas.Employee.Controllers
                 message.ReceiverName= context.Users.Where(x => x.Email == message.ReceiverEmail).Select(x => x.Name + " " + x.Surname).FirstOrDefault();
             }
             _messageService.TInsert(message);
+
+            var mailRequest = new MailRequest();
+            mailRequest.MailContent = message.MessageContent;
+            mailRequest.MailSubject = message.MessageSubject;
+            mailRequest.ReceiverMail = message.ReceiverEmail;
+
+            SendEmail(mailRequest);
+
             return RedirectToAction("SendMessage");
+        }
+
+        [HttpGet]
+        public IActionResult SendEmail()
+        {
+            return View();
+        }
+
+
+        [HttpPost]
+        public async Task<IActionResult> SendEmail(MailRequest mailRequest)
+        {
+            MimeMessage mimeMessage = new MimeMessage();
+
+            MailboxAddress mailboxAddressFrom = new MailboxAddress("Admin","ozgenur123312@gmail.com"); //ikinci parametre gönderenin maili
+            mimeMessage.From.Add(mailboxAddressFrom);
+
+            MailboxAddress mailboxAddressTo = new MailboxAddress("User", mailRequest.ReceiverMail); //ikinci parametre mail gidenin maili
+            mimeMessage.To.Add(mailboxAddressTo);
+
+            var bodyBuilder = new BodyBuilder();
+            bodyBuilder.TextBody = mailRequest.MailContent;
+            mimeMessage.Body = bodyBuilder.ToMessageBody();
+            mimeMessage.Subject = mailRequest.MailSubject;
+
+            SmtpClient client = new SmtpClient();
+
+            client.Connect("smtp.gmail.com",587,false); //ikinci parametre türkiye için port numarası, üçüncü parametre ssl kullanıp kullanmaması
+            client.Authenticate("ozgenur123312@gmail.com", "srjfhuqetjaljxxq");
+            client.Send(mimeMessage);
+            client.Disconnect(true);
+            return View();
         }
     }
 }

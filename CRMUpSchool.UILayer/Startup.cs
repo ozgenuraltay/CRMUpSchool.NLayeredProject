@@ -5,9 +5,11 @@ using CRMUpSchool.DataAccessLayer.Concretee;
 using CRMUpSchool.DataAccessLayer.EntityFramework;
 using CRMUpSchool.EntityLayer.Concrete;
 using CRMUpSchool.UILayer.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Mvc.Authorization;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -49,8 +51,18 @@ namespace CRMUpSchool.UILayer
             services.AddDbContext<Context>();
 
             services.AddControllersWithViews();
-            
 
+            services.AddMvc(config =>
+            {
+                var policy = new AuthorizationPolicyBuilder()
+                .RequireAuthenticatedUser()
+                .Build();
+                config.Filters.Add(new AuthorizeFilter(policy));
+            });
+            services.ConfigureApplicationCookie(options =>
+            {
+                options.LoginPath = "/Login/Index/";
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

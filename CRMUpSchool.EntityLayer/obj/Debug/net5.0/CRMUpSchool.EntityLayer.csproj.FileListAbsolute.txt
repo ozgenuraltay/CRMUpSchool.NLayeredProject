@@ -4,7 +4,6 @@ C:\Users\ozgen\source\repos\CRMUpSchool.UILayer\CRMUpSchool.EntityLayer\bin\Debu
 C:\Users\ozgen\source\repos\CRMUpSchool.UILayer\CRMUpSchool.EntityLayer\bin\Debug\net5.0\CRMUpSchool.EntityLayer.dll
 C:\Users\ozgen\source\repos\CRMUpSchool.UILayer\CRMUpSchool.EntityLayer\bin\Debug\net5.0\ref\CRMUpSchool.EntityLayer.dll
 C:\Users\ozgen\source\repos\CRMUpSchool.UILayer\CRMUpSchool.EntityLayer\bin\Debug\net5.0\CRMUpSchool.EntityLayer.pdb
-C:\Users\ozgen\source\repos\CRMUpSchool.UILayer\CRMUpSchool.EntityLayer\obj\Debug\net5.0\CRMUpSchool.EntityLayer.csproj.AssemblyReference.cache
 C:\Users\ozgen\source\repos\CRMUpSchool.UILayer\CRMUpSchool.EntityLayer\obj\Debug\net5.0\CRMUpSchool.EntityLayer.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\ozgen\source\repos\CRMUpSchool.UILayer\CRMUpSchool.EntityLayer\obj\Debug\net5.0\CRMUpSchool.EntityLayer.AssemblyInfoInputs.cache
 C:\Users\ozgen\source\repos\CRMUpSchool.UILayer\CRMUpSchool.EntityLayer\obj\Debug\net5.0\CRMUpSchool.EntityLayer.AssemblyInfo.cs
@@ -13,3 +12,4 @@ C:\Users\ozgen\source\repos\CRMUpSchool.UILayer\CRMUpSchool.EntityLayer\obj\Debu
 C:\Users\ozgen\source\repos\CRMUpSchool.UILayer\CRMUpSchool.EntityLayer\obj\Debug\net5.0\ref\CRMUpSchool.EntityLayer.dll
 C:\Users\ozgen\source\repos\CRMUpSchool.UILayer\CRMUpSchool.EntityLayer\obj\Debug\net5.0\CRMUpSchool.EntityLayer.pdb
 C:\Users\ozgen\source\repos\CRMUpSchool.UILayer\CRMUpSchool.EntityLayer\obj\Debug\net5.0\CRMUpSchool.EntityLayer.genruntimeconfig.cache
+C:\Users\ozgen\source\repos\CRMUpSchool.UILayer\CRMUpSchool.EntityLayer\obj\Debug\net5.0\CRMUpSchool.EntityLayer.csproj.AssemblyReference.cache
