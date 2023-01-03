@@ -224,3 +224,4 @@ C:\Users\ozgen\source\repos\CRMUpSchool.UILayer\CRMUpSchool.UILayer\bin\Debug\ne
 C:\Users\ozgen\source\repos\CRMUpSchool.UILayer\CRMUpSchool.UILayer\bin\Debug\net5.0\System.IO.Packaging.dll
 C:\Users\ozgen\source\repos\CRMUpSchool.UILayer\CRMUpSchool.UILayer\bin\Debug\net5.0\XLParser.dll
 C:\Users\ozgen\source\repos\CRMUpSchool.UILayer\CRMUpSchool.UILayer\obj\Debug\net5.0\Razor\Areas\Admin\Views\AdminCustomer\Index.cshtml.g.cs
+C:\Users\ozgen\source\repos\CRMUpSchool.UILayer\CRMUpSchool.UILayer\obj\Debug\net5.0\Razor\Areas\Admin\Views\Alert\Index.cshtml.g.cs

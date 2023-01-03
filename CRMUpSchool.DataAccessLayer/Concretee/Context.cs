@@ -30,5 +30,7 @@ namespace CRMUpSchool.DataAccessLayer.Concretee
         public DbSet<Message> Messages { get; set; }
 
         public DbSet<Announcement> Announcements { get; set; }
+
+        public DbSet<Supplier> Suppliers { get; set; }
     }
 }

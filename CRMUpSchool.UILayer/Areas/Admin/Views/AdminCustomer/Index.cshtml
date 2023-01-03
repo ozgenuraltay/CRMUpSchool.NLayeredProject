@@ -15,6 +15,8 @@
 <button type="button" id="btnCustomerDelete" class="btn btn-outline-danger">Müşteri Sil</button>
 <br />
 <br />
+<button type="button" id="btnSweet" class="btn btn-outline-info">Sweet Buton</button>
+<br />
 
 <div id="customerList">
 
@@ -40,7 +42,33 @@
     <input type="text" placeholder="Aranacak ID değerini giriniz." id="txtId" class="form-control" />
 </div>
 <br />
+
 <div id="customerGetById">
+
+</div>
+
+<br />
+<br />
+
+<div>
+    <input type="text" class="form-control" id="txtDeleteId" placeholder="Silinecek ID değerini giriniz." />
+</div>
+
+<br />
+<br />
+<br />
+
+<div class="form-group">
+    <input type="text" id="txtGuncellenecekId" class="form-control" placeholder="Güncellenecek Id'yi giriniz." />
+    <br />
+    <input type="text" id="txtName" class="form-control" placeholder="Güncellenecek adınızı giriniz." />
+    <br />
+    <input type="text" id="txtSurname" class="form-control" placeholder="Güncellenecek soyadınızı giriniz." />
+    <br />
+    <input type="text" id="txtMail" class="form-control" placeholder="Güncellenecek malinizi giriniz." />
+    <br />
+    <input type="text" id="txtPhone" class="form-control" placeholder="Güncellenecek telefon numaranızı giriniz." />
+    <br />
 
 </div>
 
@@ -66,7 +94,7 @@
                 $("#customerList").html(tableHtml);
             }
         });
-    });
+    })
 
     $("#btnCustomerAdd").click(function () {
         let customerValues = {
@@ -88,7 +116,6 @@
         });
     })
 
-
     $("#btnCustomerGet").click(function () {
         let id = $("#txtId").val();
 
@@ -102,14 +129,45 @@
                 let values = jQuery.parseJSON(fonk3);
                 console.log(values);
 
-
                 let tableHtml2 = `<table class='table table-bordered'><tr><th>Müşteri ID</th><th>Müşteri Adı</th><th>Müşteri Soyadı</th></tr><tr><td>${values.CustomerID}</td><td>${values.CustomerName}</td><td>${values.CustomerSurname}</td></tr></table>`;
                 $("#customerGetById").html(tableHtml2);
             }
         });
+    })
 
-
+    $("#btnCustomerDelete").click(x => {
+        let id = $("#txtDeleteId").val();
+        $.ajax({
+            contentType: "application/json",
+            dataType: "json",
+            type: "get",
+            url: "/Admin/AdminCustomer/DeleteCustomer/" + id,
+            success: function (fonk4) {
+                let values = jQuery.parseJSON(fonk4);
+                alert("Müşteri başarıyla silindi.");
+            }
+        });
     })
 
 
+    $("#btnCustomerUpdate").click(function () {
+        let customerValues = {
+            CustomerID: $("#txtGuncellenecekId").val(),
+            CustomerName: $("#txtName").val(),
+            CustomerSurname: $("#txtSurname").val(),
+            CustomerMail: $("#txtMail").val(),
+            CustomerPhone: $("#txtPhone").val(),
+        };
+
+        $.ajax({
+            dataType: "json",
+            type: "get",
+            data: customerValues,
+            url: "/Admin/AdminCustomer/UpdateCustomer/",
+            success: function (fonk5) {
+                let values = jQuery.parseJSON(fonk5);
+                alert("Güncelleme işlemi başarıyla tamamlandı.");
+            }
+        });
+    })
 </script>
