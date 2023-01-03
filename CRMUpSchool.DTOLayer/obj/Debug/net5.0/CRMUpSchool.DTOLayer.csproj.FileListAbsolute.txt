@@ -1,0 +1,12 @@
+C:\Users\ozgen\source\repos\CRMUpSchool.UILayer\CRMUpSchool.DTOLayer\bin\Debug\net5.0\CRMUpSchool.DTOLayer.deps.json
+C:\Users\ozgen\source\repos\CRMUpSchool.UILayer\CRMUpSchool.DTOLayer\bin\Debug\net5.0\CRMUpSchool.DTOLayer.dll
+C:\Users\ozgen\source\repos\CRMUpSchool.UILayer\CRMUpSchool.DTOLayer\bin\Debug\net5.0\ref\CRMUpSchool.DTOLayer.dll
+C:\Users\ozgen\source\repos\CRMUpSchool.UILayer\CRMUpSchool.DTOLayer\bin\Debug\net5.0\CRMUpSchool.DTOLayer.pdb
+C:\Users\ozgen\source\repos\CRMUpSchool.UILayer\CRMUpSchool.DTOLayer\obj\Debug\net5.0\CRMUpSchool.DTOLayer.csproj.AssemblyReference.cache
+C:\Users\ozgen\source\repos\CRMUpSchool.UILayer\CRMUpSchool.DTOLayer\obj\Debug\net5.0\CRMUpSchool.DTOLayer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ozgen\source\repos\CRMUpSchool.UILayer\CRMUpSchool.DTOLayer\obj\Debug\net5.0\CRMUpSchool.DTOLayer.AssemblyInfoInputs.cache
+C:\Users\ozgen\source\repos\CRMUpSchool.UILayer\CRMUpSchool.DTOLayer\obj\Debug\net5.0\CRMUpSchool.DTOLayer.AssemblyInfo.cs
+C:\Users\ozgen\source\repos\CRMUpSchool.UILayer\CRMUpSchool.DTOLayer\obj\Debug\net5.0\CRMUpSchool.DTOLayer.csproj.CoreCompileInputs.cache
+C:\Users\ozgen\source\repos\CRMUpSchool.UILayer\CRMUpSchool.DTOLayer\obj\Debug\net5.0\CRMUpSchool.DTOLayer.dll
+C:\Users\ozgen\source\repos\CRMUpSchool.UILayer\CRMUpSchool.DTOLayer\obj\Debug\net5.0\ref\CRMUpSchool.DTOLayer.dll
+C:\Users\ozgen\source\repos\CRMUpSchool.UILayer\CRMUpSchool.DTOLayer\obj\Debug\net5.0\CRMUpSchool.DTOLayer.pdb
