@@ -6,6 +6,7 @@ using CRMUpSchool.DataAccessLayer.Concretee;
 using CRMUpSchool.DataAccessLayer.EntityFramework;
 using CRMUpSchool.EntityLayer.Concrete;
 using CRMUpSchool.UILayer.Models;
+using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -38,7 +39,12 @@ namespace CRMUpSchool.UILayer
             services.AddIdentity<AppUser, AppRole>().AddErrorDescriber<CustomIdentityValidator>().AddEntityFrameworkStores<Context>();
             services.AddDbContext<Context>();
 
-            services.AddControllersWithViews();
+            services.AddAutoMapper(typeof(Startup));
+
+            services.CustomizeValidator();
+
+            
+            services.AddControllersWithViews().AddFluentValidation();
 
             services.AddMvc(config =>
             {

@@ -18,3 +18,5 @@ C:\Users\ozgen\source\repos\CRMUpSchool.UILayer\CRMUpSchool.BusinessLayer\obj\De
 C:\Users\ozgen\source\repos\CRMUpSchool.UILayer\CRMUpSchool.BusinessLayer\obj\Debug\net5.0\ref\CRMUpSchool.BusinessLayer.dll
 C:\Users\ozgen\source\repos\CRMUpSchool.UILayer\CRMUpSchool.BusinessLayer\obj\Debug\net5.0\CRMUpSchool.BusinessLayer.pdb
 C:\Users\ozgen\source\repos\CRMUpSchool.UILayer\CRMUpSchool.BusinessLayer\obj\Debug\net5.0\CRMUpSchool.BusinessLayer.genruntimeconfig.cache
+C:\Users\ozgen\source\repos\CRMUpSchool.UILayer\CRMUpSchool.BusinessLayer\bin\Debug\net5.0\CRMUpSchool.DTOLayer.dll
+C:\Users\ozgen\source\repos\CRMUpSchool.UILayer\CRMUpSchool.BusinessLayer\bin\Debug\net5.0\CRMUpSchool.DTOLayer.pdb

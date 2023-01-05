@@ -225,3 +225,11 @@ C:\Users\ozgen\source\repos\CRMUpSchool.UILayer\CRMUpSchool.UILayer\bin\Debug\ne
 C:\Users\ozgen\source\repos\CRMUpSchool.UILayer\CRMUpSchool.UILayer\bin\Debug\net5.0\XLParser.dll
 C:\Users\ozgen\source\repos\CRMUpSchool.UILayer\CRMUpSchool.UILayer\obj\Debug\net5.0\Razor\Areas\Admin\Views\AdminCustomer\Index.cshtml.g.cs
 C:\Users\ozgen\source\repos\CRMUpSchool.UILayer\CRMUpSchool.UILayer\obj\Debug\net5.0\Razor\Areas\Admin\Views\Alert\Index.cshtml.g.cs
+C:\Users\ozgen\source\repos\CRMUpSchool.UILayer\CRMUpSchool.UILayer\bin\Debug\net5.0\AutoMapper.dll
+C:\Users\ozgen\source\repos\CRMUpSchool.UILayer\CRMUpSchool.UILayer\bin\Debug\net5.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+C:\Users\ozgen\source\repos\CRMUpSchool.UILayer\CRMUpSchool.UILayer\bin\Debug\net5.0\Microsoft.Extensions.Options.dll
+C:\Users\ozgen\source\repos\CRMUpSchool.UILayer\CRMUpSchool.UILayer\bin\Debug\net5.0\Microsoft.Extensions.Primitives.dll
+C:\Users\ozgen\source\repos\CRMUpSchool.UILayer\CRMUpSchool.UILayer\bin\Debug\net5.0\CRMUpSchool.DTOLayer.dll
+C:\Users\ozgen\source\repos\CRMUpSchool.UILayer\CRMUpSchool.UILayer\bin\Debug\net5.0\CRMUpSchool.DTOLayer.pdb
+C:\Users\ozgen\source\repos\CRMUpSchool.UILayer\CRMUpSchool.UILayer\obj\Debug\net5.0\Razor\Areas\Admin\Views\Contact\AddContact.cshtml.g.cs
+C:\Users\ozgen\source\repos\CRMUpSchool.UILayer\CRMUpSchool.UILayer\obj\Debug\net5.0\Razor\Areas\Admin\Views\_ViewImports.cshtml.g.cs
