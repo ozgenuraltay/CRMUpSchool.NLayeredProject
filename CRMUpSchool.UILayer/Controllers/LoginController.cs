@@ -29,7 +29,7 @@ namespace CRMUpSchool.UILayer.Controllers
         public async Task<IActionResult> Index(AppUser appUser)
         {
             var users =await _signInManager.PasswordSignInAsync(appUser.UserName, appUser.PasswordHash, false, true); //3. değer olan 'false', çerezlerin kaydolması, 4. değer olan 'true' hatalı girişte kilitlenme olsun'u gösterir.
-            if (users.Succeeded)
+            if (users.Succeeded&& appUser.EmailConfirmed==true)
             {
                 return RedirectToAction("Index", "User");
             }

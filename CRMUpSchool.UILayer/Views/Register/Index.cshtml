@@ -1,4 +1,4 @@
-﻿@model AppUser
+﻿@model UserSignUpModel
 @{
     Layout = null;
 }
@@ -37,21 +37,31 @@
                             <form class="pt-3" method="post">
                                 <div class="form-group">
                                     <input type="text" class="form-control form-control-lg" id="" placeholder="Kullanıcı Adınız" asp-for="UserName">
+                                    <span asp-validation-for="UserName" class="text-danger"></span>
                                 </div>
                                 <div class="form-group">
                                     <input type="text" class="form-control form-control-lg" id="" placeholder="Adınız" asp-for="Name">
+                                    <span asp-validation-for="Name" class="text-danger"></span>
                                 </div>
                                 <div class="form-group">
                                     <input type="text" class="form-control form-control-lg" id="" placeholder="Soyadınız" asp-for="Surname">
+                                    <span asp-validation-for="Surname" class="text-danger"></span>
                                 </div>
                                 <div class="form-group">
                                     <input type="email" class="form-control form-control-lg" id="" placeholder="Email" asp-for="Email">
+                                    <span asp-validation-for="Email" class="text-danger"></span>
                                 </div>
                                 <div class="form-group">
                                     <input type="text" class="form-control form-control-lg" id="" placeholder="Telefon Numaranız" asp-for="PhoneNumber">
+                                    <span asp-validation-for="PhoneNumber" class="text-danger"></span>
                                 </div>
                                 <div class="form-group">
-                                    <input type="password" class="form-control form-control-lg" id="exampleInputPassword1" placeholder="Şifreniz" asp-for="PasswordHash">
+                                    <input type="password" class="form-control form-control-lg" id="exampleInputPassword1" placeholder="Şifreniz" asp-for="Password">
+                                    <span asp-validation-for="Password" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <input type="password" class="form-control form-control-lg" id="exampleInputPassword1" placeholder="Şifreniz Tekrar" asp-for="ConfirmPassword">
+                                    <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
                                 </div>
                                 <div class="mb-4">
                                     <div class="form-check">
@@ -67,6 +77,7 @@
                                 <div class="text-center mt-4 font-weight-light">
                                     Zaten hesabın var mı? <a href="/Login/Index/" class="text-primary">Giriş Yap</a>
                                 </div>
+                                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                             </form>
                         </div>
                     </div>

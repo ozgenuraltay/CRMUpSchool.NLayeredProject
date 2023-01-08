@@ -35,13 +35,13 @@ namespace CRMUpSchool.UILayer.Areas.Employee.Controllers
         public async Task<IActionResult> SendMessageAsync(Message message)
         {
             var user = await _userManager.FindByNameAsync(User.Identity.Name);
-            message.Date =Convert.ToDateTime(DateTime.Now.ToShortDateString());
+            message.Date = Convert.ToDateTime(DateTime.Now.ToShortDateString());
             message.SenderEmail = user.Email;
-            message.SenderName = user.Name +" "+ user.Surname;
+            message.SenderName = user.Name + " " + user.Surname;
 
-            using (var context=new Context()) //Gönderilenin mailine göre adı-soyadını buldum.
+            using (var context = new Context()) //Gönderilenin mailine göre adı-soyadını buldum.
             {
-                message.ReceiverName= context.Users.Where(x => x.Email == message.ReceiverEmail).Select(x => x.Name + " " + x.Surname).FirstOrDefault();
+                message.ReceiverName = context.Users.Where(x => x.Email == message.ReceiverEmail).Select(x => x.Name + " " + x.Surname).FirstOrDefault();
             }
             _messageService.TInsert(message);
 
@@ -67,7 +67,7 @@ namespace CRMUpSchool.UILayer.Areas.Employee.Controllers
         {
             MimeMessage mimeMessage = new MimeMessage();
 
-            MailboxAddress mailboxAddressFrom = new MailboxAddress("Admin","ozgenur123312@gmail.com"); //ikinci parametre gönderenin maili
+            MailboxAddress mailboxAddressFrom = new MailboxAddress("Admin", "testozge8@gmail.com"); //ikinci parametre gönderenin maili
             mimeMessage.From.Add(mailboxAddressFrom);
 
             MailboxAddress mailboxAddressTo = new MailboxAddress("User", mailRequest.ReceiverMail); //ikinci parametre mail gidenin maili
@@ -80,8 +80,8 @@ namespace CRMUpSchool.UILayer.Areas.Employee.Controllers
 
             SmtpClient client = new SmtpClient();
 
-            client.Connect("smtp.gmail.com",587,false); //ikinci parametre türkiye için port numarası, üçüncü parametre ssl kullanıp kullanmaması
-         
+            client.Connect("smtp.gmail.com", 587, false); //ikinci parametre türkiye için port numarası, üçüncü parametre ssl kullanıp kullanmaması
+            //////////////////
             client.Send(mimeMessage);
             client.Disconnect(true);
             return View();

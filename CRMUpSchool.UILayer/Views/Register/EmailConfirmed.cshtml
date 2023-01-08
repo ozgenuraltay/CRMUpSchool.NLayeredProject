@@ -1,0 +1,19 @@
+﻿@model AppUser
+@{
+    ViewData["Title"] = "Email Doğrulama";
+    Layout = null;
+}
+
+<link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+<h1>Email Doğrulama</h1>
+<form method="post">
+
+    <label>Email</label>
+    <input type="text" asp-for="Email" class="form-control" />
+
+    <label>Email Doğrulama Kodu</label>
+    <input type="text" asp-for="MailCode" class="form-control" />
+
+    <button type="submit">CONFIRMED</button>
+</form>

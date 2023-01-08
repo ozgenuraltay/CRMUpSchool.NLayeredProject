@@ -17,6 +17,8 @@ namespace CRMUpSchool.EntityLayer.Concrete
 
         public string Gender { get; set; }
 
+        public string MailCode { get; set; }
+
         public List<EmployeeTask> EmployeeTasks { get; set; }
     }
 }
