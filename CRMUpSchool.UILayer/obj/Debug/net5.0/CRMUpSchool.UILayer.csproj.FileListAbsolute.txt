@@ -235,3 +235,4 @@ C:\Users\ozgen\source\repos\CRMUpSchool.UILayer\CRMUpSchool.UILayer\obj\Debug\ne
 C:\Users\ozgen\source\repos\CRMUpSchool.UILayer\CRMUpSchool.UILayer\obj\Debug\net5.0\Razor\Views\Register\EmailConfirmed.cshtml.g.cs
 C:\Users\ozgen\source\repos\CRMUpSchool.UILayer\CRMUpSchool.UILayer\obj\Debug\net5.0\Razor\Views\Role\UpdateRole.cshtml.g.cs
 C:\Users\ozgen\source\repos\CRMUpSchool.UILayer\CRMUpSchool.UILayer\obj\Debug\net5.0\Razor\Views\Role\UserList.cshtml.g.cs
+C:\Users\ozgen\source\repos\CRMUpSchool.UILayer\CRMUpSchool.UILayer\obj\Debug\net5.0\Razor\Views\Role\AssignRole.cshtml.g.cs

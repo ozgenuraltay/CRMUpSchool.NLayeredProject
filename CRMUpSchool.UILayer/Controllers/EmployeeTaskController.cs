@@ -42,10 +42,13 @@ namespace CRMUpSchool.UILayer.Controllers
         }
 
         [HttpPost]
-        public IActionResult AddTask(EmployeeTask employeeTask)
+        public async Task<IActionResult> AddTask(EmployeeTask employeeTask)
         {
             employeeTask.Date = Convert.ToDateTime(DateTime.Now.ToShortDateString());
             employeeTask.Status = "Görev atandı.";
+            var values = await _userManager.FindByNameAsync(User.Identity.Name);
+            employeeTask.FollowerUserID = values.Id; //görevi atayan kullanıcı, login olan kullanıcıdır.
+
             _employeeTaskService.TInsert(employeeTask);
             return RedirectToAction("Index");
         }

@@ -97,5 +97,49 @@ namespace CRMUpSchool.UILayer.Controllers
             var users = _userManager.Users.ToList();
             return View(users);
         }
+
+        [HttpGet]
+        public async Task<IActionResult> AssignRole(int id)
+        {
+            var user = _userManager.Users.FirstOrDefault(x => x.Id == id);
+            var roles = _roleManager.Roles.ToList();
+            TempData["UserID"] = user.Id;
+            var userRoles = await _userManager.GetRolesAsync(user);
+
+            List<RoleAssignViewModel> models = new List<RoleAssignViewModel>();
+
+            foreach (var item in roles)
+            {
+                RoleAssignViewModel roleAssignViewModel = new RoleAssignViewModel();
+                roleAssignViewModel.Name = item.Name;
+                roleAssignViewModel.RoleID = item.Id;
+                roleAssignViewModel.Exists = userRoles.Contains(item.Name);
+                models.Add(roleAssignViewModel);
+            }
+            return View(models);
+        } 
+
+        [HttpPost]
+        public async Task<IActionResult> AssignRole(List<RoleAssignViewModel> roleAssignViewModels)
+        {
+            var userID =(int)TempData["UserID"];
+
+            var user = _userManager.Users.FirstOrDefault(x => x.Id == userID);
+
+            foreach (var item in roleAssignViewModels)
+            {
+                if (item.Exists)
+                {
+                    await _userManager.AddToRoleAsync(user, item.Name);
+                }
+                else
+                {
+                    await _userManager.RemoveFromRoleAsync(user, item.Name);
+                }
+            }
+
+            return RedirectToAction("UserList");
+            
+        }
     }
 }
